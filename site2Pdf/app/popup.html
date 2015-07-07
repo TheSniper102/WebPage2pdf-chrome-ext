@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html ng-app="convertModule" ng-csp>
+<head>
+    <meta charset="UTF-8">
+    <title>convert webPage to pdf</title>
+    <style>
+        body {
+            min-width: 300px;
+            overflow-x: hidden;
+            
+        }
+
+        .btn {
+            color: #ffffff;
+            background-color: #428bca;
+            border-color: #357ebd;
+            -webkit-appearance: button;
+            outline: none;
+            cursor: pointer;
+            margin: 10px auto;
+            padding: 6px 12px;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.428571429;
+            white-space: nowrap;
+            vertical-align: middle;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        .form-actions{
+            text-align:center;
+        }
+        .form-control {
+            display: block;
+            width: 85%;
+            height: 30px;
+            padding: 2px 12px;
+            font-size: 14px;
+            line-height: 1.428571429;
+            color: #555555;
+            vertical-align: middle;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+          
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        }
+    </style>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+    <link href="css/loading-bar.css" rel="stylesheet" />
+
+</head>
+<body ng-controller="ConvertController">
+    
+    <h4 style="text-align:center;"> convert webPage to pdf</h4>
+
+    <form name="convert" ng-submit="ConvertPage(PageUrl)">
+        <input type="url" placeholder="http://www.url-of-Page.com" class="form-control" ng-model="PageUrl" required />
+        <div class="form-actions">
+            <input type="submit" value="convert" class="btn" />
+        </div>
+    </form>
+
+    <script src="js/chrome-api-vsdoc.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/loading-bar.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

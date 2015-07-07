@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+
+    "name": "Webpage to pdf converter",
+    "short_name": "webPage2pdf",
+    "description": "convert webpage to pdf using only webpage url",
+    "minimum_chrome_version": "23",
+    "web_accessible_resources": ["css/loading-bar.css","img/icon.png","icon175x175.png"],
+    "version": "1.0",
+    "offline_enabled": false,
+    "icons": {
+        "128": "img/icon175x175.png"
+    },
+    "options_page": "about.html",
+    "permissions": [
+     
+    ],
+    "background": {
+        "scripts": [ "js/vendor/angular.min.js","js/loading-bar.js" ]
+    },
+ 
+    "browser_action": {
+        "default_icon": { 
+            "19": "img/icon.png", 
+            "38": "img/icon.png", 
+           "128": "img/icon175x175.png"
+        },
+        "default_title": "WebPage2pdf",
+        "default_popup": "popup.html" 
+    }
+}
